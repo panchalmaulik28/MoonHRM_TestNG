@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="1" failed="1" skipped="1">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-11-02T14:05:36 IST" name="Default suite" finished-at="2024-11-02T14:06:09 IST" duration-ms="33083">
+    <groups>
+    </groups>
+    <test started-at="2024-11-02T14:05:36 IST" name="Default test" finished-at="2024-11-02T14:06:09 IST" duration-ms="33083">
+      <class name="com.qa.testcases.CustomizationsTC">
+        <test-method is-config="true" signature="init()[pri:0, instance:com.qa.testcases.CustomizationsTC@449a4f23]" started-at="2024-11-02T14:05:36 IST" name="init" finished-at="2024-11-02T14:05:47 IST" duration-ms="10846" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method signature="addSkills()[pri:1, instance:com.qa.testcases.CustomizationsTC@449a4f23]" started-at="2024-11-02T14:05:47 IST" name="addSkills" finished-at="2024-11-02T14:05:53 IST" duration-ms="5650" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addSkills -->
+        <test-method is-config="true" signature="close()[pri:0, instance:com.qa.testcases.CustomizationsTC@449a4f23]" started-at="2024-11-02T14:05:53 IST" name="close" finished-at="2024-11-02T14:05:53 IST" duration-ms="401" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+        <test-method is-config="true" signature="init()[pri:0, instance:com.qa.testcases.CustomizationsTC@449a4f23]" started-at="2024-11-02T14:05:53 IST" name="init" finished-at="2024-11-02T14:06:05 IST" duration-ms="11613" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method signature="editSkills()[pri:0, instance:com.qa.testcases.CustomizationsTC@449a4f23]" started-at="2024-11-02T14:06:05 IST" name="editSkills" finished-at="2024-11-02T14:06:09 IST" depends-on-methods="com.qa.testcases.CustomizationsTC.addSkills" duration-ms="4125" status="FAIL">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <span _ngcontent-vnl-c171="" class="toggle_hide_txt flex_row">...</span> is not clickable at point (121, 585). Other element would receive the click: <div _ngcontent-vnl-c171="" class="app_version ng-star-inserted" style="">...</div>
+  (Session info: chrome=130.0.6723.71)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [35ec6cb881e836c7f0e3fb077e0ee279, clickElement {id=f.7374FDC74F840C65C91E7FD2CBBEF807.d.C7EB8A38AE4D6E822E7395E5C69524EB.e.77}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.71, chrome: {chromedriverVersion: 130.0.6723.91 (53ac07678369..., userDataDir: C:\Users\MAULIK~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56054}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56054/devtoo..., se:cdpVersion: 130.0.6723.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (35ec6cb881e836c7f0e3fb077e0ee279)] -> xpath: //div[contains(@class,'HeaderAdminMenu')]/mat-tree/mat-nested-tree-node/div/a/span/span]
+Session ID: 35ec6cb881e836c7f0e3fb077e0ee279]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <span _ngcontent-vnl-c171="" class="toggle_hide_txt flex_row">...</span> is not clickable at point (121, 585). Other element would receive the click: <div _ngcontent-vnl-c171="" class="app_version ng-star-inserted" style="">...</div>
+  (Session info: chrome=130.0.6723.71)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [35ec6cb881e836c7f0e3fb077e0ee279, clickElement {id=f.7374FDC74F840C65C91E7FD2CBBEF807.d.C7EB8A38AE4D6E822E7395E5C69524EB.e.77}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.71, chrome: {chromedriverVersion: 130.0.6723.91 (53ac07678369..., userDataDir: C:\Users\MAULIK~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56054}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56054/devtoo..., se:cdpVersion: 130.0.6723.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (35ec6cb881e836c7f0e3fb077e0ee279)] -> xpath: //div[contains(@class,'HeaderAdminMenu')]/mat-tree/mat-nested-tree-node/div/a/span/span]
+Session ID: 35ec6cb881e836c7f0e3fb077e0ee279
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at com.qa.page.CustomizationsPage.navigateToAdminSettings(CustomizationsPage.java:67)
+at com.qa.testcases.CustomizationsTC.editSkills(CustomizationsTC.java:33)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editSkills -->
+        <test-method is-config="true" signature="close()[pri:0, instance:com.qa.testcases.CustomizationsTC@449a4f23]" started-at="2024-11-02T14:06:09 IST" name="close" finished-at="2024-11-02T14:06:09 IST" duration-ms="329" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+        <test-method signature="deleteSkills()[pri:0, instance:com.qa.testcases.CustomizationsTC@449a4f23]" started-at="2024-11-02T14:06:09 IST" name="deleteSkills" finished-at="2024-11-02T14:06:09 IST" depends-on-methods="com.qa.testcases.CustomizationsTC.editSkills" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method com.qa.testcases.CustomizationsTC.deleteSkills() on instance com.qa.testcases.CustomizationsTC@449a4f23 depends on not successfully finished methods 
+[com.qa.testcases.CustomizationsTC.editSkills() on instance com.qa.testcases.CustomizationsTC@449a4f23]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method com.qa.testcases.CustomizationsTC.deleteSkills() on instance com.qa.testcases.CustomizationsTC@449a4f23 depends on not successfully finished methods 
+[com.qa.testcases.CustomizationsTC.editSkills() on instance com.qa.testcases.CustomizationsTC@449a4f23]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteSkills -->
+      </class> <!-- com.qa.testcases.CustomizationsTC -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
