@@ -1,4 +1,4 @@
-package com.qa.constant;
+package constant;
 
 public class AppConstant {
 	public static final String LOGIN_EMAILVALIDATION = "Please enter email";

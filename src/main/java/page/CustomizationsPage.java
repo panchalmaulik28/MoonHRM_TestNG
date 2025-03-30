@@ -1,4 +1,4 @@
-package com.qa.page;
+package page;
 
 import java.util.List;
 
@@ -33,60 +33,51 @@ public class CustomizationsPage {
 
 	@FindBy(xpath = "//div[contains(@class,'popup_footer_div')]/button[2]")
 	WebElement saveBtn;
-	
+
 	@FindBy(xpath = "//div[@role='menu']/div/button[1]")
 	WebElement editBtn;
 
 	@FindBy(xpath = "//div[@role='menu']/div/button[2]")
 	WebElement deleteBtn;
-	
+
 	@FindBy(xpath = "//tbody[@role='rowgroup']")
 	WebElement table;
-	
-	By sideMenuList = By.xpath("//span[contains(@class,'toggle_hide_txt')]/span");
-	By adminMenuList = By
-			.xpath("//div[contains(@class,'HeaderAdminMenu')]/mat-tree/mat-nested-tree-node/div/a/span/span");
+
+	By sideMenuList = By.xpath("//span[contains(@class,'mat-mdc-list-item-unscoped-content')]/span");
+	By sideMenuDDList = By.xpath("//mat-expansion-panel-header[@role='button']/span/mat-panel-title/span");
 	By subMenuList = By.xpath("//div[@class='list_item']/ul/li");
 	By customiztionList = By.xpath("//tbody[@role='rowgroup']/tr/td[1]");
 	By customiztionListAction = By.xpath("//tbody[@role='rowgroup']/tr[10]/td/button");
 
-	public void navigateToAdminSettings(String sideMenuAdminName) {
-		List<WebElement> adminMenuLists = driver.findElements(adminMenuList);
-		JavascriptExecutor js;
-		if (adminMenuLists.size() != 0) {
-			for (WebElement e : adminMenuLists) {
-				js = (JavascriptExecutor) driver;
-				js.executeScript("arguments[0].scrollIntoView();", e);
-				if (e.getText().trim().contains("Admin")) {
-					e.click();
-					for (WebElement f : adminMenuLists) {
-						js = (JavascriptExecutor) driver;
-						js.executeScript("arguments[0].scrollIntoView();", f);
-						if (f.getText().trim().contains(sideMenuAdminName.trim())) {
-							wait.until(ExpectedConditions.elementToBeClickable(f));
-							f.click();
-							break;
-						}
-					}
-				}
-			}
-		} else {
-			navigateToAdminSettings(sideMenuAdminName);
-		}
-	}
-
-	public void sideMenu(String menu) {
+	public void clickOnSideSubMenu(String value) {
 		List<WebElement> list = driver.findElements(sideMenuList);
 		if (list.size() != 0) {
 			for (WebElement e : list) {
 				JavascriptExecutor js = (JavascriptExecutor) driver;
 				js.executeScript("arguments[0].scrollIntoView();", e);
-				if (e.getText().trim().contains(menu.trim())) {
+				if (e.getText().trim().equals(value)) {
 					e.click();
+					break;
 				}
 			}
 		} else {
-			sideMenu(menu);
+			clickOnSideSubMenu(value);
+		}
+	}
+
+	public void clickOnSideMenu(String value) {
+		List<WebElement> list = driver.findElements(sideMenuDDList);
+		if (list.size() != 0) {
+			for (WebElement e : list) {
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].scrollIntoView();", e);
+				if (e.getText().trim().equals(value)) {
+					e.click();
+					break;
+				}
+			}
+		} else {
+			clickOnSideMenu(value);
 		}
 	}
 
@@ -115,12 +106,12 @@ public class CustomizationsPage {
 		if (list.size() != 0) {
 			for (WebElement e : list) {
 				if (e.getText().trim().equalsIgnoreCase(data.trim())) {
-					editActionTemp = list.indexOf(e)+1;
-					int scrollto = list.indexOf(e)-2;
-					WebElement x = driver.findElement(By.xpath("//tbody[@role='rowgroup']/tr["+scrollto+"]/td/button"));
+					editActionTemp = list.indexOf(e) + 1;
+					int scrollto = list.indexOf(e) - 2;
+					WebElement x = driver.findElement(By.xpath("//tbody[@role='rowgroup']/tr[" + scrollto + "]/td/button"));
 					JavascriptExecutor js = (JavascriptExecutor) driver;
 					js.executeScript("arguments[0].scrollIntoView();", x);
-					WebElement y = driver.findElement(By.xpath("//tbody[@role='rowgroup']/tr["+editActionTemp+"]/td/button"));		
+					WebElement y = driver.findElement(By.xpath("//tbody[@role='rowgroup']/tr[" + editActionTemp + "]/td/button"));
 					wait.until(ExpectedConditions.elementToBeClickable(y));
 					y.click();
 					editBtn.click();
@@ -141,17 +132,14 @@ public class CustomizationsPage {
 		int editActionTemp = 0;
 		List<WebElement> list = driver.findElements(customiztionList);
 		if (list.size() != 0) {
-			System.out.println("list.size() = " + list.size());
 			for (WebElement e : list) {
-				System.out.println(e.getText());
-				if (e.getText().trim().equalsIgnoreCase(data.trim()+ " Update")) {
-					System.out.println("InSide IF = "+e.getText());
-					editActionTemp = list.indexOf(e)+1;
-					int scrollto = list.indexOf(e)-2;
-					WebElement x = driver.findElement(By.xpath("//tbody[@role='rowgroup']/tr["+scrollto+"]/td/button"));
+				if (e.getText().trim().equalsIgnoreCase(data.trim() + " Update")) {
+					editActionTemp = list.indexOf(e) + 1;
+					int scrollto = list.indexOf(e) - 2;
+					WebElement x = driver.findElement(By.xpath("//tbody[@role='rowgroup']/tr[" + scrollto + "]/td/button"));
 					JavascriptExecutor js = (JavascriptExecutor) driver;
 					js.executeScript("arguments[0].scrollIntoView();", x);
-					WebElement y = driver.findElement(By.xpath("//tbody[@role='rowgroup']/tr["+editActionTemp+"]/td/button"));		
+					WebElement y = driver.findElement(By.xpath("//tbody[@role='rowgroup']/tr[" + editActionTemp + "]/td/button"));
 					wait.until(ExpectedConditions.elementToBeClickable(y));
 					y.click();
 					deleteBtn.click();
@@ -160,8 +148,7 @@ public class CustomizationsPage {
 				}
 			}
 		} else {
-			editCustomizations(data);
+			deleteCustomizations(data);
 		}
 	}
-
 }
