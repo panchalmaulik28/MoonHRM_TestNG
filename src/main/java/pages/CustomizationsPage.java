@@ -1,4 +1,4 @@
-package page;
+package pages;
 
 import java.util.List;
 
@@ -53,9 +53,9 @@ public class CustomizationsPage {
 		List<WebElement> list = driver.findElements(sideMenuList);
 		if (list.size() != 0) {
 			for (WebElement e : list) {
-				JavascriptExecutor js = (JavascriptExecutor) driver;
-				js.executeScript("arguments[0].scrollIntoView();", e);
 				if (e.getText().trim().equals(value)) {
+					JavascriptExecutor js = (JavascriptExecutor) driver;
+					js.executeScript("arguments[0].scrollIntoView();", e);
 					e.click();
 					break;
 				}
@@ -69,9 +69,9 @@ public class CustomizationsPage {
 		List<WebElement> list = driver.findElements(sideMenuDDList);
 		if (list.size() != 0) {
 			for (WebElement e : list) {
-				JavascriptExecutor js = (JavascriptExecutor) driver;
-				js.executeScript("arguments[0].scrollIntoView();", e);
 				if (e.getText().trim().equals(value)) {
+					JavascriptExecutor js = (JavascriptExecutor) driver;
+					js.executeScript("arguments[0].scrollIntoView();", e);
 					e.click();
 					break;
 				}

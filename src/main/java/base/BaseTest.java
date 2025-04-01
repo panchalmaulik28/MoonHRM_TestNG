@@ -4,8 +4,10 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+
+import pages.LoginPage;
 import utilities.ConfigRead;
 import utilities.DriverManager;
 
@@ -13,18 +15,19 @@ public class BaseTest {
 
 	public static WebDriver driver;
 	public static WebDriverWait wait;
-
-	@BeforeMethod
-	public WebDriver init() {
+	public static LoginPage loginPage;
+	
+	@BeforeTest
+	public void init() {
 		String URL = ConfigRead.properties("url");
 		String browserName = ConfigRead.properties("browser");
 		driver = DriverManager.initBrowser(browserName);
 		wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 		driver.get(URL);
-		return  driver;
+		loginPage = new LoginPage(driver, wait);
 	}
 
-	@AfterMethod
+	@AfterTest
 	public void close() {
 		DriverManager.quit();
 	}

@@ -1,4 +1,4 @@
-package page;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -38,17 +38,18 @@ public class LoginPage {
 	@FindBy(xpath = "//div[contains(@class,'toast-message')]")
 	static WebElement toastMessageRes;
 
+	By snackBar = By.xpath("//simple-snack-bar[contains(@class,'mat-mdc-simple-snack-bar')]/div");
+	
 	public void doLogin(String email, String password) {
+		emailTxt.clear();
 		emailTxt.sendKeys(email);
+		passwordTxt.clear();
 		passwordTxt.sendKeys(password);
 		loginBtn.click();
 	}
 
 	public String snackBarVisibleAndGetText() {
-		//wait.until(ExpectedConditions.visibilityOf(simpleSnackBarToast));
-		System.out.println("1");
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//simple-snack-bar[contains(@class,'mat-mdc-simple-snack-bar')]/div")));
-		System.out.println("2");
+		wait.until(ExpectedConditions.presenceOfElementLocated(snackBar));
 		return simpleSnackBarToast.getText().trim();
 	}
 

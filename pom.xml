@@ -5,43 +5,21 @@
 	<groupId>MoonHRM_TestNG</groupId>
 	<artifactId>MoonHRM_TestNG</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<profiles>
-		<profile>
-			<id>smoke</id>
-			<build>
-				<pluginManagement>
-					<plugins>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-surefire-plugin</artifactId>
-							<version>3.1.2</version>
-							<configuration>
-								<suiteXmlFiles>
-									<suiteXmlFile>
-										src/test/resources/xml/testng.xml</suiteXmlFile>
-								</suiteXmlFiles>
-							</configuration>
-						</plugin>
-					</plugins>
-				</pluginManagement>
-			</build>
-		</profile>
-	</profiles>
 	<dependencies>
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>7.10.2</version>
-		</dependency>
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-java</artifactId>
-			<version>4.25.0</version>
+			<version>7.11.0</version>
 		</dependency>
 		<dependency>
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
-			<version>5.9.2</version>
+			<version>6.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>4.30.0</version>
 		</dependency>
 	</dependencies>
 </project>

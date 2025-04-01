@@ -1,21 +1,25 @@
-package testcases;
+package tests;
 
 import static org.testng.Assert.assertEquals;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import base.BaseTest;
 import constant.AppConstant;
-import page.CustomizationsPage;
-import page.LoginPage;
+import pages.CustomizationsPage;
+import pages.LoginPage;
 
-public class CustomizationsTC extends BaseTest {
-	LoginTC loginTC = new LoginTC();
-	static LoginPage loginPage;
-	static CustomizationsPage customizationsPage;
+public class CustomizationsTest extends BaseTest {
+	CustomizationsPage customizationsPage;
 	private String data = "Selenuim Automation";
+
+	@BeforeClass
+	public void login() {
+		LoginTest loginTC = new LoginTest();
+		loginTC.loginWithValidCredentials();
+	}
 
 	@Test(priority = 1)
 	public void addSkills() {
-		loginTC.loginWithValidCredentials();
 		customizationsPage = new CustomizationsPage(driver, wait);
 		customizationsPage.clickOnSideMenu("Admin");
 		customizationsPage.clickOnSideSubMenu("Customizations");
@@ -26,7 +30,6 @@ public class CustomizationsTC extends BaseTest {
 
 	@Test(dependsOnMethods = "addSkills")
 	public void editSkills() {
-		loginTC.loginWithValidCredentials();
 		customizationsPage = new CustomizationsPage(driver, wait);
 		customizationsPage.clickOnSideMenu("Admin");
 		customizationsPage.clickOnSideSubMenu("Customizations");
@@ -37,7 +40,6 @@ public class CustomizationsTC extends BaseTest {
 
 	@Test(dependsOnMethods = "editSkills")
 	public void deleteSkills() {
-		loginTC.loginWithValidCredentials();
 		customizationsPage = new CustomizationsPage(driver, wait);
 		customizationsPage.clickOnSideMenu("Admin");
 		customizationsPage.clickOnSideSubMenu("Customizations");

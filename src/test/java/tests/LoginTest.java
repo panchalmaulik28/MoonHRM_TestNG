@@ -1,16 +1,15 @@
 
-package testcases;
+package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
 import constant.AppConstant;
-import page.LoginPage;
+import pages.LoginPage;
 import utilities.ConfigRead;
 
-public class LoginTC extends BaseTest {
-	static LoginPage loginPage;
+public class LoginTest extends BaseTest {
 
 	@Test(priority = 1)
 	public void loginWithEmail() {
@@ -31,7 +30,7 @@ public class LoginTC extends BaseTest {
 	public void loginWithValidCredentials() {
 		loginPage = new LoginPage(driver, wait);
 		loginPage.doLogin(ConfigRead.properties("email"), ConfigRead.properties("password"));
-	//	Assert.assertEquals(loginPage.snackBarVisibleAndGetText(), AppConstant.LOGIN_SUCCESS);
-	//	loginPage.snackBarInvisible();
+		Assert.assertEquals(loginPage.snackBarVisibleAndGetText(), AppConstant.LOGIN_SUCCESS);
+		loginPage.snackBarInvisible();
 	}
 }
