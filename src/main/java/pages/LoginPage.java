@@ -36,7 +36,7 @@ public class LoginPage {
 	WebElement simpleSnackBarToast;
 
 	@FindBy(xpath = "//div[contains(@class,'toast-message')]")
-	static WebElement toastMessageRes;
+	static WebElement toastMessages;
 
 	By snackBar = By.xpath("//simple-snack-bar[contains(@class,'mat-mdc-simple-snack-bar')]/div");
 	
@@ -68,7 +68,11 @@ public class LoginPage {
 	}
 
 	public static String toastMeassage() {
-		wait.until(ExpectedConditions.visibilityOf(toastMessageRes));
-		return toastMessageRes.getText();
+		wait.until(ExpectedConditions.visibilityOf(toastMessages));
+		return toastMessages.getText();
+	}
+
+	public static void toastInvisible() {
+		wait.until(ExpectedConditions.invisibilityOf(toastMessages));
 	}
 }
