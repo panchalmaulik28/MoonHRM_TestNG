@@ -11,9 +11,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class LoginPage {
 
 	private static WebDriverWait wait;
+	WebDriver driver;
 
 	public LoginPage(WebDriver driver, WebDriverWait wait) {
 		LoginPage.wait = wait;
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
@@ -38,8 +40,8 @@ public class LoginPage {
 	@FindBy(xpath = "//div[contains(@class,'toast-message')]")
 	static WebElement toastMessages;
 
-	By snackBar = By.xpath("//simple-snack-bar[contains(@class,'mat-mdc-simple-snack-bar')]/div");
-	
+	By snackBarBy = By.xpath("//simple-snack-bar[contains(@class,'mat-mdc-simple-snack-bar')]/div");
+
 	public void doLogin(String email, String password) {
 		emailTxt.clear();
 		emailTxt.sendKeys(email);
@@ -49,8 +51,8 @@ public class LoginPage {
 	}
 
 	public String snackBarVisibleAndGetText() {
-		wait.until(ExpectedConditions.presenceOfElementLocated(snackBar));
-		return simpleSnackBarToast.getText().trim();
+		wait.until(ExpectedConditions.presenceOfElementLocated(snackBarBy));
+		return driver.findElement(snackBarBy).getText().trim();
 	}
 
 	public void snackBarInvisible() {

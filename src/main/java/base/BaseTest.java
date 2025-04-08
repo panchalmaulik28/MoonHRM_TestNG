@@ -22,7 +22,7 @@ public class BaseTest {
 		String URL = ConfigRead.properties("url");
 		String browserName = ConfigRead.properties("browser");
 		driver = DriverManager.initBrowser(browserName);
-		wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+		wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		driver.get(URL);
 		loginPage = new LoginPage(driver, wait);
 	}
